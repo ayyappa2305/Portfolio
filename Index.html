@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: initial, Arial, Helvetica, sans-serif;
+}
+
+
+
+.bg-image {
+  /* The image used */
+  background-image: url("AWSImage.jpg");
+  
+  /* Add the blur effect*/
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+  
+  /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  color: white;
+  /*border: 3px solid #f1f1f1;*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.bg-text2 {
+  color: white;
+
+  /*border: 3px solid #f1f1f1;*/
+  position: absolute;
+  top: 5%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  width: 50%;
+  padding: 20px;
+  text-align: right;
+}
+
+
+
+
+/* Style the header */
+.header {
+  text-align: center;
+  background: white;
+  color:Black;
+  padding: 100px;
+  width: 100%;
+  
+  
+
+}
+
+
+
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 50px 100px;
+}
+
+/* Create two equal columns that sits next to each other */
+/* Sidebar/left column */
+.left {
+  -ms-flex: 100%; /* IE10 */
+  flex: 100%;
+  background-color:white;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(10, 10, 10, 10);
+  max-width: 500px;
+  margin: auto;
+  
+}
+
+/* Main column */
+.right {   
+  -ms-flex: 100%; /* IE10 */
+  flex: 100%;
+  background-color: white;
+  padding:20px;
+  box-shadow: 0 4px 8px 0 rgba(10, 10, 10, 10);
+  max-width: 500px;
+  margin: auto;
+  
+}
+
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,700,900);
+$fontstack_heading: "Merriweather", sans-serif;
+$fontstack_body: "Merriweather", sans-serif;
+body {
+  font-size:100%;
+  line-height:1.6;
+}
+.block-content {
+  min-height:100vh;
+}
+block-content p {
+	font-size:1.1em;
+	line-height:1.5;
+	-webkit-font-smoothing:antialiased;
+	margin:0 auto 1em auto;
+}
+.block-content h2 {
+
+	text-align:center;
+	margin:1em 0 0 0;
+	font-size:2.5em;
+	line-height:1;
+	letter-spacing:0.02em;
+
+	@media all and (min-width:40em) {
+
+	font-size: 4.75em;
+
+	}
+}
+.subtitle {
+
+	font-family: fontstack_heading;
+	font-weight:300;
+	text-transform:uppercase;
+	text-align:center;
+	font-size:1em;
+	margin:0.5em 0;
+}
+.heading-group {
+	margin:0 0 3em 0;
+}
+.content h3 {
+	font-size: 1.2em;
+	line-height:1.2;
+	letter-spacing:0.02em;
+  color:#fff;
+
+	@media all and (min-width:40em) {
+
+	font-size: 2.5em;
+
+	}
+}
+
+
+h1, h2, h3 {
+
+	font-family: $fontstack_heading;
+	font-weight:900;
+
+}
+p {
+	font-family: $fontstack_body;
+	line-height:1.5;
+}
+
+.l-block-spacing {
+
+	
+	min-height:80vh;
+	padding:2em 0 4em 0;
+
+}
+
+.l-contained {
+
+	max-width:1000px;
+	margin-left:auto;
+	margin-right:auto;
+	
+	padding-left:1em;
+	padding-right:1em;
+
+	@media all and (min-width:40em) {
+
+		padding-left:2em;
+		padding-right:2em;
+
+
+	}
+}
+.timeline-list {
+
+	//border-left: 5px solid #ccc;
+	padding-bottom: 1em;
+	position: relative;
+	max-width:700px;
+	margin:0 auto;
+ 
+  &:before {
+		content: "";
+     border-left: 5px solid #CCC;
+     left: -0.25em;
+     top: 2em;
+     height: 100%;
+     position: absolute;
+     bottom: 0;
+     top: 0;
+    transform-origin:0 0;
+    animation:scaleVertical 3s 1s ease both 1;
+	}
+
+	&:after {
+		content: "";
+    clear:both;
+    
+		position: absolute;
+		bottom: 0px;
+		left: -1em;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background: none repeat scroll 0% 0% #DDD;
+		border: 5px solid #DDD;
+		box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    animation:revealScaleUp 0.75s 2.82s ease both 1;
+	}
+}
+
+.t-block-teal {
+	background:rgb(248, 247, 247);
+}
+.t-block-teal h2 {
+	color:black;
+}
+.t-block-teal h3 {
+	color:#034944;
+}
+.t-block-teal p {
+	color:black;
+}
+//list animation 
+//scale in the circle, follwoed by the list item
+//the border must also animate in.
+.timeline-list li {
+
+	margin:0 0 3em 0;
+	padding:0 2em 0em 2em;
+    position: relative;
+
+}
+.timeline-list li:before {
+
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: -1.45em;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: none repeat scroll 0% 0% #02aa9d;
+	border: 5px solid #fff;
+  animation:revealScaleUp 0.75s 0s ease both 1;
+}
+.timeline-list {
+   
+   animation:reveal 2s 0 ease both 1;
+}
+.timeline-list li .content {
+  animation:revealFromLeft 0.5s 0s ease both 1;
+}
+
+
+
+
+.timeline-list li:nth-child(1):before {
+  animation-delay:0.85s;
+}
+.timeline-list li:nth-child(1) .content {
+  animation-delay:1.05s;
+}
+.timeline-list li:nth-child(2):before {
+   animation-delay:1.2s;
+}
+.timeline-list li:nth-child(2) .content {
+  animation-delay:1.5s;
+}
+.timeline-list li:nth-child(3):before {
+  animation-delay:1.8s;
+}
+.timeline-list li:nth-child(3) .content {
+  animation-delay:2.1s;
+}
+.timeline-list li:nth-child(4):before {
+  animation-delay:2s;
+}
+.timeline-list li:nth-child(4) .content {
+  animation-delay:2.3s;
+}
+@keyframes revealFromLeft {
+  0% {
+    transform:translateX(-1em);
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+@keyframes reveal {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+@keyframes scaleVertical {
+  0% {
+    transform:scaleY(0);
+    
+  }
+  100% {
+    transform:scaleY(1);
+  }
+}
+@keyframes revealScaleUp {
+  0% {
+    opacity:0;
+    transform:scale(0.5);
+  }
+  
+  
+  
+  50% {
+     opacity:1;
+     transform:scale(1.3);
+    
+  }
+  100% {
+    opacity:1;
+    transform:scale(1);
+    
+  }
+}
+
+.buttonx {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 650px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+
+
+a {
+  text-decoration: none;
+  font-size: 15px;
+  color:white;
+  padding: 20px;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+
+
+.fa {
+  padding: 15px;
+  font-size: 18px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 1px 3px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.5;
+}
+
+.fa-whatsapp {
+  background: green;
+  color: white;
+}
+
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-facebook {
+  background: blue;
+  color: white;
+}
+
+/* Footer */
+.footer {
+  padding: 10px;
+  text-align: center;
+  background:black;
+  color:white;
+  
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+</style>
+</head>
+<body>
+
+
+
+<div class="bg-image"></div>
+
+
+<div class="bg-text">
+    
+  <h1 style="font-size:60px"><i>I'm Ayyappa Kotla</i></h1>
+  <h1 style="font-size:30px"> <i>a Cloud Developer</i></h1>
+</div>
+
+<div class="bg-text2">
+    <a href="https://www.linkedin.com/in/ayyappa-kotla-50a394107/" download>Linkedin</a>
+  <a href="https://www.youracclaim.com/users/ayyappa-kotla.3a975eef" download>Acclaim</a>
+
+</div>
+
+<div class="header">
+  <h2><i>A creative and enthusiastic cloud developer. Potentially dedicated in building and optimizing the performance of user centric, high impact websites and software applications globally. Seeking to leverage my design and development skills to acquire experience. Able to handle multiple tasks in a fast-paced environment while maintaining high-quality outcomes. Comfortable in team leading. Fast learner and smart worker. Possess an innate ability for maintaining professional integrity and dedication while enhancing knowledge in Information systems and cloud development.</i></h2>
+
+</div>
+
+<div class="row">
+    <div class="left">
+        
+                <img src="Image2.jpeg" alt="John" style="width:100%">
+                        <h2 style="text-align: center">Why cloud?</h2>
+                          <p>I enjoy architecture and devloping cloud applications and websites which are reliable, fast and responsive. Developing them and seeing them functional on the internet has intensified my interest in cloud development. Developing in the cloud enables users to get their applications to market quickly. Hardware failures do not result in data loss because of networked backups. Cloud computing uses remote resources, saving organizations the cost of servers and other equipment. Working on various projects related to cloud development has got me to the zeal to see myself in the future of Web Development. </p>
+  
+  </div>
+  
+  
+  <div class="right">
+    
+        <img src="Image1.jpeg" alt="John" style="width:100%">
+          <h2 style="text-align: center">Why Electronic Portfolio?</h2>
+    <p>Cloud developers are challenged with needing to effectively demonstrate their skills to prospective clients. The Internet as a virtualization platform provides an easier way to connect and communicate, in terms of professional exposition. Developing a portfolio is a way to distribute a collection of data and projects and online portfolios, which can be published electronically on the Internet. This Portfolio will be an exhibition of my projects and skills related to Information Systems Technology – Cloud Design and Development.</p>
+  
+  </div>
+  </div>
+
+  
+  
+  
+
+<section class="block-content t-block-teal l-block-spacing">
+    <div class="l-contained">
+        <header class="heading-group">
+            <h2>Personal Timeline</h2>
+            
+        </header>
+        <ul class="timeline-list">
+            <li>
+  <div class="content">
+                <h2>2017</h2>
+                <p >
+                  Electronics and communication graduation from the Anurag group of Institutions in first class with distinction.
+                </p>
+</div>
+            </li>
+            <li>
+  <div class="content">
+                <h2>2018</h2>
+            
+                <p>
+                  Joined IBM as an Associate System Engineer & later was deployed into Statefarm Insurance project, supporting Cognos Analyics reporting tool which includes migrations, resolving spordaic errors, creating datasource connections & server configuration.
+                </p>
+</div>
+            </li>
+            <li>
+  <div class="content">
+                <h2>2019</h2>
+            
+        
+                <p>
+                  Promoted as a Data-Engineer. Soon, completed a proof of concept using AWS services as an influence of personal interest, which got me deployed into AWS claims automation project working as i work on Cognos and AWS in parallel.
+                </p>
+</div>
+            </li>
+            
+
+            
+            <li>
+  <div class="content">
+                <h2>2020</h2>
+                
+        
+                <p>
+                  Certified in AWS Developer associate later in september.
+                </p>
+</div>
+            </li>
+        </ul>
+        
+                
+        
+    </div>
+
+    <button class="buttonx">
+        <a href="CV.docx" download>Resume</a></button>
+</section>
+  
+ 
+ 
+
+<h2 style="text-align:center">Contact Information</h2>
+
+<div class="card">
+  <img src="me.jpeg" alt="John" style="width:100%">
+  <h1>Ayyappa Kotla</h1>
+  <p class="title">AWS Cloud Developer</p>
+  <p>Mobile:8555028543</p>
+  <p>Email: ayyappa2305@gmail.com</p>
+  <p>.</p>
+  </div>
+  </div>
+
+  
+<div class="footer">
+    <a href="https://www.facebook.com/ayyappa2305" class="fa fa-facebook"></a>
+    
+<a href="https://www.linkedin.com/in/ayyappa-kotla-50a394107/" class="fa fa-linkedin"></a>
+<a href="https://wa.me/qr/MQE7YH7TOD3UG1" class="fa fa-whatsapp"></a>
+
+    
+  <h2><i>Thank-you!</i></h2>
+</div>
+
+
+</body>
+</html>
